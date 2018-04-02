@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Train Scheduler</title>
+    <title>Train Scheduler</title>
+    <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 	
 </head>
 <body>
@@ -27,14 +35,43 @@
 							    <th scope="col">Time to Arrival</th>
 							    <th scope="col">Frequency</th>
 							    <th scope="col">Platform #</th>
-						    </tr>
+							</tr>
+		<!--Needed from here: Input field for train information:
+			-name
+			-destination
+			-train times
+			-frequency
+			(create an object from the input field and push the object to the database)-->
+
 					   	</thead>
 					  	   		<tbody id="train-schedule-body"></tbody>
 					</table>
-				    
+
+					<!-- Form Field Area -->
+				    <form>
+						<div class="form-group">
+						  	<label for="trainName">Train Name</label>
+						  	<input type="text" class="form-control" id="name" placeholder="">
+						</div>
+						<div class="form-group">
+						  	<label for="trainDestination">Train Destination</label>
+						  	<input type="text" class="form-control" id="destination" placeholder="">
+						</div>
+						<div class="form-group">
+							<label for="trainTimes">Train Times</label>
+							<input type="text" class="form-control" id="times" placeholder="">
+						</div>
+						  <div class="form-group">
+							<label for="trainFrequency">Train Frequency</label>
+							<input type="text" class="form-control" id="frequency" placeholder="">
+						</div>
+						
+						<button type="submit" class="btn btn-default" id="submit">Submit</button>
+					  </form>
 				</div>
 			</div>
-			<!-- Form Field Area -->
 			
+
+			<script src="assets/javascript/app.js"></script>
 </body>
 </html>
